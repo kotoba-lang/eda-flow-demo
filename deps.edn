@@ -1,0 +1,17 @@
+{:paths ["src" "test"]
+ :deps {io.github.kotoba-lang/rtl {:local/root "../rtl"}
+        io.github.kotoba-lang/eda {:local/root "../eda"}
+        io.github.kotoba-lang/pdk {:local/root "../pdk"}
+        io.github.kotoba-lang/pnr {:local/root "../pnr"}
+        io.github.kotoba-lang/org-si2-lef {:local/root "../org-si2-lef"}
+        io.github.kotoba-lang/org-ieee-upf {:local/root "../org-ieee-upf"}
+        io.github.kotoba-lang/org-ibis {:local/root "../org-ibis"}
+        io.github.kotoba-lang/signal-integrity {:local/root "../signal-integrity"}
+        io.github.kotoba-lang/org-accellera-uvm {:local/root "../org-accellera-uvm"}}
+ :aliases {:test {:extra-paths ["test"]
+                  :extra-deps {io.github.cognitect-labs/test-runner
+                               {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+                  :main-opts ["-m" "cognitect.test-runner"]}
+           :lint {:replace-deps {clj-kondo/clj-kondo {:mvn/version "2024.11.14"}}
+                  :main-opts ["-m" "clj-kondo.main" "--lint" "src" "test"
+                              "--fail-level" "error"]}}}
