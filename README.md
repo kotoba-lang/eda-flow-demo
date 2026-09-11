@@ -54,11 +54,11 @@ operates on the hand-built netlist, not on stage 1's parse result.
 
 ## Structure
 
-- `src/eda_flow_demo/flow.cljc` -- one namespace, one function per stage
+- `src/eda_flow_demo/flow.cljk` -- one namespace, one function per stage
   (`stage-1-parse-verilog`, `stage-2-synthesize`, ... `stage-10-
   verification`), plus `run-full-flow` threading the whole pipeline and
   returning every stage's result keyed by stage name.
-- `test/eda_flow_demo/flow_test.cljc` -- one `deftest` per stage (reusing
+- `test/eda_flow_demo/flow_test.cljk` -- one `deftest` per stage (reusing
   the exact fixtures `run-full-flow` uses) asserting that stage's specific
   output, plus `full-flow-runs-end-to-end` calling `run-full-flow` once and
   checking every stage key is present and well-formed.
