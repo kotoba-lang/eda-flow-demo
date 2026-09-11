@@ -73,14 +73,14 @@ directly `:require`s: `rtl`, `eda`, `pdk`, `pnr`, `org-si2-lef`,
 Everything else this pipeline touches (`org-synopsys-sdc`, `org-ieee-vhdl`,
 `org-si2-def`, `org-si2-openaccess`, `org-synopsys-liberty`,
 `org-ieee-systemverilog`) comes in transitively through those 9 repos'
-own `deps.edn` (`clojure -Spath` resolves the whole 15-repo graph cleanly,
+own `deps.edn` (`kbb -Spath` resolves the whole 15-repo graph cleanly,
 one `clojure` jar version selected, no coordinate conflicts -- the largest
 dependency fan-in of any repo in this family so far).
 
 ## Develop
 
 ```bash
-clojure -M:test   # 18 tests / 92 assertions, 0 failures
-clojure -Spath    # confirms the full transitive local/root graph resolves
-clojure -M:lint   # clj-kondo, 0 errors/warnings
+kbb -M:test   # 18 tests / 92 assertions, 0 failures
+kbb -Spath    # confirms the full transitive local/root graph resolves
+kbb -M:lint   # clj-kondo, 0 errors/warnings
 ```
