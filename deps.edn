@@ -1,5 +1,9 @@
 {:paths ["src" "test"]
- :deps {io.github.kotoba-lang/rtl {:local/root "../rtl"}
+ :deps {
+        ;; kotoba.test (clojure.test-compatible surface), not clojure.test --
+        ;; scripts/migrate-clojure-test-to-kotoba-test.cljk. Explicit floor.
+        io.github.kotoba-lang/test {:git/url "https://github.com/kotoba-lang/test.git"
+                                    :git/sha "2ab4885f99fd25552d380d0f6b0b54c5a72eb7ae"}io.github.kotoba-lang/rtl {:local/root "../rtl"}
         io.github.kotoba-lang/eda {:local/root "../eda"}
         io.github.kotoba-lang/pdk {:local/root "../pdk"}
         io.github.kotoba-lang/pnr {:local/root "../pnr"}
