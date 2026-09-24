@@ -4,7 +4,7 @@
   the exact same fixtures `eda-flow-demo.flow/run-full-flow` threads, so
   these tests double as documentation of what each stage really does.
   Plus one end-to-end test running the whole flow once."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [eda-flow-demo.flow :as flow]
             [lef.core :as lef]))
 
